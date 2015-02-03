@@ -14,8 +14,8 @@ function compile(file, options) {
   var global = options.global || 'this';
   var namespace = options.namespace || 'JST';
 
-  var name = _.isFunction(options.name) ? options.name(file) : file.relative;
-  name = gutil.replaceExtension(name.replace(/\\/g, '/'), '');
+  var name = _.isFunction(options.name) ? options.name(file) : gutil.replaceExtension(file.relative, '');
+  name = name.replace(/\\/g, '/');
 
   var prefix = '(' + global + '[\'' + namespace + '\'] = ' + global + '[\'' + namespace + '\'] || {})'
         + '[\'' + name + '\'] = ';
