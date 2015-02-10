@@ -27,7 +27,7 @@ function compile(file, options) {
     postfix = '\n})();';
   }
 
-  return prefix + template + postfix;
+  return prefix + template + postfix + ';';
 }
 
 module.exports = function(options) {
